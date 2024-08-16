@@ -1,38 +1,23 @@
-import subprocess
-import datetime
+# Ubuntu Chatbot
 
-def get_current_time():
-    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+Welcome to the Ubuntu Chatbot project! This repository contains a chatbot designed to operate on Ubuntu systems, capable of understanding and executing basic commands.
 
-def list_files():
-    try:
-        files = subprocess.check_output(['ls', '-l']).decode('utf-8')
-        return files
-    except Exception as e:
-        return str(e)
+## Overview
 
-def process_command(command):
-    command = command.lower()
-    if 'time' in command:
-        return f"Current time is: {get_current_time()}"
-    elif 'list' in command or 'files' in command:
-        return list_files()
-    elif 'exit' in command:
-        return "Goodbye!"
-    else:
-        return "Sorry, I didn't understand that command."
+The Ubuntu Chatbot is a command-line based chatbot that can perform various system tasks and respond to user queries. It's built using Python and designed to be easily extendable for additional functionalities.
 
-def main():
-    print("Ubuntu Chatbot is running. Type 'exit' to end the session.")
-    while True:
-        user_input = input("You: ")
-        response = process_command(user_input)
-        print(f"Chatbot: {response}")
-        if 'exit' in user_input.lower():
-            break
+## Features
 
-if __name__ == "__main__":
-    main()
-# config.py
+- **Natural Language Understanding**: Processes user input and executes commands based on the content.
+- **System Interaction**: Can run system commands and scripts, such as listing files and checking the current time.
+- **Customizable**: Easily extendable to add more commands and responses.
 
-# Example configuration (not used in this simple example)
+## Installation
+
+Follow these steps to install and run the Ubuntu Chatbot on your local machine:
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/FRIDAY29/Ubuntu-Chatbot.git
+   cd Ubuntu-Chatbot
