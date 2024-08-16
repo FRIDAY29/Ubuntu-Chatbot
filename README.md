@@ -33,3 +33,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+# config.py
+
+# Example configuration (not used in this simple example)
